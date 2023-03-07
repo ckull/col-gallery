@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "src/styles/layout.css"
-
+import { ReactLenis } from "@studio-freight/react-lenis"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -22,9 +22,20 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const options = {
+    duration: 1.2,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+    direction: "vertical", // vertical, horizontal
+    gestureDirection: "vertical", // vertical, horizontal, both
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+  }
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+    <ReactLenis root options={{ ...options }}>
+      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
       <div
         style={{
           margin: `0 auto`,
@@ -40,11 +51,10 @@ const Layout = ({ children }) => {
           }}
         >
           © {new Date().getFullYear()} &middot; Built with
-          {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
-    </>
+    </ReactLenis>
   )
 }
 

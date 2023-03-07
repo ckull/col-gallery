@@ -6,6 +6,7 @@ const Home = () => {
       <h1>
         Welcome to <b>Gatsby!</b>
       </h1>
+      <div className="h-screen"></div>
     </Container>
   )
 }

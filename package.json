@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@studio-freight/react-lenis": "^0.0.12",
     "gatsby": "^5.5.0",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-manifest": "^5.5.0",
