@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+
 :root {
   --border-radius: 4px;
   --color-text: #333;
@@ -46,6 +53,7 @@ body {
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
+  overflow: hidden;
 }
 a {
   background-color: transparent;
